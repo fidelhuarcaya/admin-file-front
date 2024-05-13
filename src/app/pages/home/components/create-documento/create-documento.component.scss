@@ -1,0 +1,91 @@
+.card:hover {
+    background-color: #f5f9ff;
+  }
+  
+  input[type='file'] {
+    display: none;
+    border: #0467fc;
+  }
+  #file {
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
+  
+  .textLink {
+    background-color: #ecf3fd;
+    color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e6f0ff;
+  }
+  .textLink:hover {
+    background-color: #cfe1fb;
+  }
+  
+  .label-file {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .p-card {
+  
+    padding-top: 1rem;
+  }
+  
+  .p-card-body {
+    margin-bottom: 4px;
+    padding-bottom: 0;
+  }
+  
+  .p-card-body > p {
+    font-weight: 600;
+  
+  }
+  
+  .field-container {
+    display: grid;
+    width: 100%; /* Modifica el ancho del contenedor al 100% */
+    grid-template-columns: 1fr 1fr; /* Divide el contenedor en dos columnas de igual ancho */
+    gap: 1rem; /* Espacio entre los campos */
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Asegura que los campos ocupen todo el ancho de su contenedor */
+  }
+  
+  .field:nth-child(2) {
+    justify-self: flex-end; /* Alinea el segundo campo a la derecha */
+  }
+  /* Consulta de medios para pantallas pequeñas */
+  @media screen and (max-width: 600px) {
+    .field-container {
+      grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    }
+  
+    .field:nth-child(2) {
+      justify-self: unset; /* Restaura la alineación predeterminada en una sola columna */
+    }
+  }
+  .content {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .p-component,
+  .p-component * {
+    box-sizing: border-box;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  :host ::ng-deep .p-dropdown {
+    display: flex;
+    width: 100%;
+    min-width: 1rem;
+    max-width: 100%;
+  }
+  

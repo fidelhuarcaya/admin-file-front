@@ -1,0 +1,62 @@
+<div class="flex flex-column">
+    <div>
+    </div>
+
+    <div class="flex flex-column align-items-center justify-content-center card" fileUpload
+        (filesChangeEmiter)="onFileChange($event)">
+        <i class="pi pi-upload" style="font-size: 2rem"></i>
+        <p>Arrastre un archivo aquí o</p>
+        <input type="file" name="file" id="file" accept=".pdf" (change)="onFileChangeEvent($event)"/>
+        <label class="label-file" for="file"><span class="textLink">Busque un archivo</span></label>
+        <p>
+            Tamaño maximo del archivo:
+        </p>
+        <div>
+            <div *ngIf="files&&files.length>0">
+              <div
+                class="flex justify-content-between"
+                *ngFor="let file of files; let ind = index">
+                <button
+                  *ngIf="file.uuidAnexo != null"
+                  pButton
+                  
+                  class="p-button-text"
+                  label="{{file.name}}"
+                  style="color: #000000"
+                  icon="pi pi-file-pdf"></button>
+                <div
+                  *ngIf="file.uuidAnexo == null"
+                  class="flex align-items-center gap-2 px-3 py-2">
+                  <i class="pi pi-file-pdf"></i>
+                  <p class="font-bold">{{file.name}}</p>
+                </div>
+        
+                <div>
+                  <button
+                    pButton
+                    class="p-button-text"
+                    (click)="deleteFile(file)"
+                    style="color: #000000"
+                    icon="pi pi-trash"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    </div>
+
+    <div>
+        <div class="flex justify-content-end gap-3">
+            <button
+              pButton
+              label="Cancelar"
+              (click)="cancel()"
+              class="p-button-text"
+              style="color: #000000"></button>
+            <button
+              pButton
+              label="Guardar"
+              (click)="updateFile()"
+              style="background: #193359; color: #ffffff"></button>
+          </div>
+    </div>
