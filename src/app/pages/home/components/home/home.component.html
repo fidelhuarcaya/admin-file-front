@@ -1,0 +1,87 @@
+<div class="flex justify-content-center align-content-center align-items-center img"
+ style="background-color: brown; height: 100%; ">
+    <div class="flex card">
+        <div class="justify-content-center align-content-center align-items-center	">
+            <h5 style="padding-left: 10%;padding-right: 10%; color: #ffffff;">Bienvenido a</h5>
+            <h1 style="padding-left: 10%;padding-right: 10%; color: #ffffff;">MUNICIPALIDAD DE MANZANARES</h1>
+        </div>
+        <div class="">
+            <div class="">
+                <form [formGroup]="form" class="form-style" (ngSubmit)="saveSolicitud()">
+                    <!-- Campo de nombre -->
+                    <div class="form-group">
+                        <label> Nombre: </label>
+                        <input pInputText type="text" formControlName="nombres" class="form-control"
+                            placeholder="Ingresa tu nombre">
+                        <div *ngIf="form.controls['nombres'].invalid && (form.controls['nombres'].dirty || form.controls['nombres'].touched)"
+                            class="alert alert-danger error">
+                            <div *ngIf="form.controls['nombres'].errors &&form.controls['nombres'].errors['required']">
+                                Nombre es requerido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo de apellidos -->
+                    <div class="form-group">
+                        <label> Apellidos: </label>
+                        <input pInputText type="text" formControlName="apellidos" class="form-control"
+                            placeholder="Ingresa tus apellidos">
+                        <div *ngIf="form.controls['apellidos'].invalid && (form.controls['apellidos'].dirty || form.controls['apellidos'].touched)"
+                            class="alert alert-danger error">
+                            <div
+                                *ngIf="form.controls['apellidos'].errors &&form.controls['apellidos'].errors['required']">
+                                Apellidos es requerido.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo de DNI -->
+                    <div class="form-group">
+                        <label>DNI:</label>
+                        <input pInputText type="text" formControlName="dni" class="form-control"
+                            placeholder="Ingresa tu DNI">
+                        <div *ngIf="form.controls['dni'].invalid && (form.controls['dni'].dirty || form.controls['dni'].touched)"
+                            class="alert alert-danger error">
+                            <div *ngIf="form.controls['dni'].errors &&form.controls['dni'].errors['required']">
+                                DNI es requerido.
+                            </div>
+                            <div *ngIf="form.controls['dni'].errors &&form.controls['dni'].errors['minlength']">
+                                DNI debe tener al menos 8 caracteres.
+                            </div>
+                            <div *ngIf="form.controls['dni'].errors &&form.controls['dni'].errors['maxlength']">
+                                DNI no debe tener más de 8 caracteres.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo de tipo de trámite -->
+                    <div class="form-group">
+                        <label >Tipo de trámite:</label>
+                        <p-dropdown id="tipoTramite" appendTo="body" [options]="comboTipoTramite" optionLabel="nombre"
+                            optionValue="idTipoTramite" formControlName="idTipoTramite" [showClear]="true"
+                            [filter]="true" filterBy="idTipoTramite,nombre" placeholder="Selecccione el tipo de trámite"
+                            (onChange)="onChangeTipoTramiteSelect($event)">
+                            <ng-template pTemplate="selectedItem">
+                                <span>{{selectedTipoTramite?.idTipoTramite}} -
+                                    {{selectedTipoTramite?.nombre}}</span>
+                            </ng-template>
+
+                            <ng-template let-tipoTramite pTemplate="item">
+                                <span>{{tipoTramite?.idTipoTramite}} - {{tipoTramite?.nombre}}</span>
+                            </ng-template>
+                        </p-dropdown>
+                        <div
+                            *ngIf="form.controls['idTipoTramite'].errors && form.controls['idTipoTramite'].errors['required']">
+                            <span class="error">Tipo de trámite es requerido.</span>
+                        </div>
+
+                    </div>
+
+                    <button pButton type="submit" class="p-button-outlined p-button-success">Continuar</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>

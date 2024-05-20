@@ -1,0 +1,72 @@
+.img {
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231002/pngtree-d-rendering-of-a-green-wall-restaurant-or-coffee-shop-design-image_13537362.png");
+}
+
+.form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  margin: auto;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+  background-color: rgba(0, 70, 10, 0.5);
+}
+
+label {
+}
+
+.error {
+  color: #ff0000;
+}
+
+p-dropdown {
+  width: 100%;
+  background-color: rgba(0, 70, 10, 0.5);
+}
+
+label {
+  display: block; /* Asegura que el label sea un bloque, ocupando todo el ancho disponible */
+  margin-bottom: 5px; /* Añade un pequeño espacio debajo del label */
+}
+
+.card {
+  background-color: rgba(0, 70, 10, 0.8);
+  color: #ffffff;
+  border: none;
+}
+:host ::ng-deep .p-dropdown {
+  display: flex;
+  width: 100%;
+  min-width: 1rem;
+  max-width: 100%;
+  background-color: rgba(0, 70, 10, 0.8);
+}
+:host ::ng-deep .p-dropdown-panel {
+  background-color: rgba(0, 70, 10, 0.8);
+}
+
+:host ::ng-deep .p-dropdown-panel .p-dropdown-header {
+  background: rgba(0, 70, 10, 0.8);
+}
+
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  background: rgba(0, 70, 10, 0.8);
+}
+.p-dropdown-item {
+  background: rgba(0, 70, 10, 0.8);
+}
