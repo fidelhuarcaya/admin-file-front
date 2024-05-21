@@ -70,3 +70,12 @@ label {
 .p-dropdown-item {
   background: rgba(0, 70, 10, 0.8);
 }
+
+input{
+  color: #ffffff;
+}
+
+:host ::ng-deep .p-inputtext {
+
+  color: #f8f9fa;
+}

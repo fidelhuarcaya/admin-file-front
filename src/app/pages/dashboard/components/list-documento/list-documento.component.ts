@@ -29,24 +29,24 @@ import { CreateDocumentoComponent } from '../create-documento/create-documento.c
     AvatarModule,
     AvatarGroupModule,
     TagModule,
-    
+
   ],
   providers: [ApiService, DialogService, MessageService],
   templateUrl: './list-documento.component.html',
   styleUrl: './list-documento.component.scss'
 })
-export class ListDocumentoComponent  implements OnInit, OnDestroy {
+export class ListDocumentoComponent implements OnInit, OnDestroy {
 
   documentos: Documento[] = [];
   ref: DynamicDialogRef | undefined;
 
   items: MegaMenuItem[] = [];
-  mensaje: string='';
-  subscription: Subscription|null=null;
+  mensaje: string = '';
+  subscription: Subscription | null = null;
   constructor(private apiService: ApiService,
-    public dialogService: DialogService, 
+    public dialogService: DialogService,
     public messageService: MessageService,
-    private sharedService:SharedService,
+    private sharedService: SharedService,
 
   ) { }
 
@@ -85,17 +85,19 @@ export class ListDocumentoComponent  implements OnInit, OnDestroy {
   getSeverity(status: number) {
     switch (status) {
       case 1:
-        return 'success';
+        return 'info';
       case 2:
         return 'warning';
       case 3:
         return 'danger';
+      case 4:
+        return 'success';
     }
-    return 'success'; 
+    return 'info';
   }
   ngOnDestroy() {
     // Es importante desuscribirse para evitar fugas de memoria
-    if(this.subscription)
-    this.subscription.unsubscribe();
+    if (this.subscription)
+      this.subscription.unsubscribe();
   }
 }
